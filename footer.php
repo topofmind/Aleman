@@ -41,6 +41,21 @@
                     <a href="https://co.linkedin.com/company/colegioalemancali" target="_blank">
                         <i class="fab fa-linkedin"></i>
                     </a>
+<<<<<<< HEAD
+=======
+                     <a href="https://www.flickr.com/photos/147011084@N02/" target="_blank">
+                        <i class="fab fa-flickr"></i>
+                    </a>
+    
+                    <?php if(is_page( array('proceso-de-admisiones','por-que-el-aleman','requisitos', 'inscripcion-open-house') )){ ?>
+
+                    <a href="https://api.whatsapp.com/send?phone=573116746830&text=Escribe%20tu%20Mensaje" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+
+                    <?php } ?>
+                    
+>>>>>>> bb8e1767b582e7eaa4a20e665fa77dab30f92743
                 </div>
             </div>
         </div>
@@ -55,6 +70,19 @@
         <i class="fas fa-credit-card"></i> Beam Padres
     </a>
 </div>
+<<<<<<< HEAD
+=======
+
+<?php if(is_page( array('proceso-de-admisiones','por-que-el-aleman','requisitos', 'inscripcion-open-house') )){ ?>
+
+<div class="btn-wp">
+    <a href="https://api.whatsapp.com/send?phone=573116746830&text=Escribe%20tu%20Mensaje" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</div>
+
+<?php } ?>
+>>>>>>> bb8e1767b582e7eaa4a20e665fa77dab30f92743
 </body>
 </html>
 

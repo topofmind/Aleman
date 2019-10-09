@@ -97,11 +97,19 @@ window.onload = function() {
     //active menu
 
     if(document.title == 'por-que-el-aleman'){
+<<<<<<< HEAD
         menuActive = document.getElementById('menu-item-176');//79
         menuActive.classList.add('active');
     }
     else if(document.title == 'mision-vision' || document.title == 'historia' || document.title == 'idiomas'){
         menuActive = document.getElementById('menu-item-171');//75
+=======
+        menuActive = document.getElementById('menu-item-79');//79
+        menuActive.classList.add('active');
+    }
+    else if(document.title == 'mision-vision' || document.title == 'historia' || document.title == 'idiomas'){
+        menuActive = document.getElementById('menu-item-75');//75
+>>>>>>> bb8e1767b582e7eaa4a20e665fa77dab30f92743
         menuActive.classList.add('active');
     }
 
