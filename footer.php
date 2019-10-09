@@ -41,8 +41,6 @@
                     <a href="https://co.linkedin.com/company/colegioalemancali" target="_blank">
                         <i class="fab fa-linkedin"></i>
                     </a>
-<<<<<<< HEAD
-=======
                      <a href="https://www.flickr.com/photos/147011084@N02/" target="_blank">
                         <i class="fab fa-flickr"></i>
                     </a>
@@ -55,7 +53,6 @@
 
                     <?php } ?>
                     
->>>>>>> bb8e1767b582e7eaa4a20e665fa77dab30f92743
                 </div>
             </div>
         </div>
