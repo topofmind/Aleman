@@ -310,34 +310,72 @@ return '<div class="card-blue">
 }
 add_shortcode('card_blue','card_blue_shortcode');
 
+
 function pageSidebar1_submenu_shortcode($atts, $content = null){
   extract(shortcode_atts(array(
     'url' => '',
     'text_link' => '',
     'active' => '',
-    'class' => ''
-), $atts));
-
+    'class' => '',
+    'target' => ''
+  ), $atts));
+  
   return "<div class='page-item-submenu1 ".$active." ".$class."'>
-            <a href='".$url."'>".$text_link."</a>     
-          </div>";
+  <a href='".$url."' target='".$target."'>".$text_link."</a>     
+  </div>";
 }
 add_shortcode('submenu1','pageSidebar1_submenu_shortcode');
+
+function pageSidebar1_submenu_contentItems_shortcode($atts, $content = null){
+  extract(shortcode_atts(array(
+      'url' => '',
+      'text_link' => '',
+      'active' => '',
+      'class' => ''
+  ), $atts));
+            
+    return "<div class='page-item-submenu1 subSubmenus".$active." ".$class."'>
+              <a>".$text_link." <i class='submenuicon fas fa-chevron-down'></i></a>
+              
+              <div class='contentItems'>
+                ".do_shortcode($content)."
+              </div>   
+            </div>";
+  }
+  add_shortcode('submenu1_contentItems','pageSidebar1_submenu_contentItems_shortcode');
 
 function submenu1_items_shortcode($atts, $content = null){
   extract(shortcode_atts(array(
     'url' => '',
     'text_link' => '',
     'active' => '',
-    'class' => ''
+    'class' => '',
+    'target' => ''
 ), $atts));
 
   return "<div class='page-item-submenu1 items ".$active." ".$class."'>
-            <a href='".$url."'><i class='fas fa-level-up-alt'></i>
+            <a href='".$url."' target='".$target."'><i class='fas fa-level-up-alt'></i>
             ".$text_link."</a>     
           </div>";
 }
 add_shortcode('submenu1_items','submenu1_items_shortcode');
+
+function submenu1_items_container_shortcode($atts, $content = null){
+  extract(shortcode_atts(array(
+    'url' => '',
+    'text_link' => '',
+    'active' => '',
+    'class' => ''
+), $atts));
+
+  return "<div class='page-item-submenu1 items container ".$active." ".$class."'>
+            <a><i class='submenuicon fas fa-chevron-down'></i>
+            <i class='fas fa-level-up-alt'></i>
+            ".$text_link."</a>
+            <div class='itemsContainer'>".do_shortcode($content)."</div>    
+          </div>";
+}
+add_shortcode('submenu1_items_container','submenu1_items_container_shortcode');
 
 function pageSidebar2_submenu_shortcode($atts, $content = null){
   extract(shortcode_atts(array(

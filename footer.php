@@ -67,8 +67,6 @@
         <i class="fas fa-credit-card"></i> Beam Padres
     </a>
 </div>
-<<<<<<< HEAD
-=======
 
 <?php if(is_page( array('proceso-de-admisiones','por-que-el-aleman','requisitos', 'inscripcion-open-house') )){ ?>
 
@@ -79,7 +77,6 @@
 </div>
 
 <?php } ?>
->>>>>>> bb8e1767b582e7eaa4a20e665fa77dab30f92743
 </body>
 </html>
 

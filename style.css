@@ -17,6 +17,9 @@ Tags: Colegio alemán, bilingüe, frances
     list-style: none;
     text-decoration: none;
 }
+a{
+    cursor: pointer;
+}
 h1,h2{
     text-transform: uppercase;
 }
@@ -742,7 +745,36 @@ align-items: center;
 sidebarPage1 h3{
     display: none;
 }
+.page-item-submenu1.subSubmenus a.active{
+    background: #0066b1;
+    color: white;
+}
+.page-item-submenu1.subSubmenus a{
+    position: relative;
+}
+.page-item-submenu1.subSubmenus i.submenuicon{
+    position: absolute;
+    display: block;
+    right: 8px;
+    top: 34%;
+    transform: translateY(-50%);
+}
+.contentItems,.itemsContainer{
+    max-height: 0px;
+    height: 0;
+    overflow: hidden;
+    transition: 1s ease-out;
+    border-bottom: 1px solid transparent; 
+}
+.page-item-submenu1 .itemsContainer a{
+    text-transform: none;
 
+}
+.contentItems.open,.itemsContainer.open{
+    max-height: 1000px;
+    height: auto;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
 .page-item-submenu1{
     border-left: 2px solid #e8e8e7;
     transition: 0.3s;
@@ -780,7 +812,14 @@ sidebarPage1 h3{
     transform: rotate(90deg);
     margin-right: 4px;
 }
-.page-item-submenu1.lower{
+.page-item-submenu1.items.container a{
+    position: relative;
+}
+.page-item-submenu1.items.container a i.submenuicon{
+    position: absolute;
+    right: 8px;
+    top: 30%;
+    transform: translateY(-50%);
 
 }
 .page-item-submenu1.lower a{
