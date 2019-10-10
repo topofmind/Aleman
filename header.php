@@ -41,12 +41,12 @@
             </div>
         </div>
 
-        <div class="contSlider active" numslide="1">
+        <div class="contSlider " numslide="1">
             <img src="<?php echo get_stylesheet_directory_uri() ?>/img/banner-7.jpg" alt="Bienvenido al Colegio Alemán" class="imgBanner">
             <div class="textBanner">
             </div>
         </div>
-        <div class="contSlider active" numslide="2">
+        <div class="contSlider " numslide="2">
             <img src="<?php echo get_stylesheet_directory_uri() ?>/img/banner-6.jpg" alt="Bienvenido al Colegio Alemán" class="imgBanner">
             <div class="textBanner">
                 <h2>Formamos ciudadanos para el mundo</h2>
