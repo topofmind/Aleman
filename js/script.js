@@ -215,6 +215,12 @@ window.onload = function() {
             const elM = document.getElementById(m);
             const elS = document.getElementById(s);
 
+            let time = getRemainTime(deadline);
+                elD.innerHTML =`<h2>${time.remainDays}</h2> <span>Días</span>`;
+                elH.innerHTML =`<h2>${time.remainHours}</h2> <span>Horas</span>`;
+                elM.innerHTML =`<h2>${time.remainMinutes}</h2> <span>Minutos</span>`;
+                elS.innerHTML =`<h2>${time.remainSeconds}</h2> <span>Segundos</span>`;
+
             //acutalizando cada segundo la fecha
             const timerUpdate = setInterval(() => {
 
