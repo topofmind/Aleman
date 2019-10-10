@@ -174,4 +174,66 @@ window.onload = function() {
 
     }
 
+    //contador regresivo
+    if(document.getElementById('clock')){
+    
+        //constante para almacenar el tiempo faltante
+        //deadline-> variable de el tiempo limite
+        const getRemainTime = deadline => {
+
+            //fecha actual
+            let now = new Date();
+
+            //fecha limite, tiempo en milisegundos dividimos para sacar en segundos y sumamos un segundo para que no se atrase un segundo el contador
+            remainTime = (new Date(deadline) - now + 1000) / 1000;
+
+            //obtener los segundos,usamos la clase Math para redondear ya que debe tener decimales
+            //slice para que coja los dos ultimos dijitos esto es por q si el numero no es mayor a 9 debe ponerse un 0 ej 02, como funcionan los relojes
+            remainSeconds = ('0' + Math.floor(remainTime % 60)).slice(-2);
+
+            //sacando los minutos dividimos en la cantidad de segundo que hay en un minuto, y modulo de cuantos minutos en una hora
+            remainMinutes = ('0' + Math.floor(remainTime /60 % 60)).slice(-2);
+
+            //horas -> dividimos en cantidad de segundos en una hora, y modulo de horas en un día
+            remainHours = ('0' + Math.floor(remainTime /3600 % 24)).slice(-2);
+
+            //obteniendo días -> multiplicamos los segundos por horas
+            remainDays =  Math.floor(remainTime /(3600 * 24));
+
+            return{
+                remainTime,
+                remainSeconds,
+                remainMinutes,
+                remainHours,
+                remainDays
+            }
+        }
+
+        const countDown = (deadline, d,h,m,s, finalMessage) =>{
+            const elD = document.getElementById(d);
+            const elH = document.getElementById(h);
+            const elM = document.getElementById(m);
+            const elS = document.getElementById(s);
+
+            //acutalizando cada segundo la fecha
+            const timerUpdate = setInterval(() => {
+
+                let time = getRemainTime(deadline);
+                elD.innerHTML =`<h2>${time.remainDays}</h2> <span>Días</span>`;
+                elH.innerHTML =`<h2>${time.remainHours}</h2> <span>Horas</span>`;
+                elM.innerHTML =`<h2>${time.remainMinutes}</h2> <span>Minutos</span>`;
+                elS.innerHTML =`<h2>${time.remainSeconds}</h2> <span>Segundos</span>`;
+
+                if(time.remainTime <= 1){
+                    clearInterval(timerUpdate);
+                    el.innerHTML = finalMessage;
+                }
+
+            }, 1000);
+        }
+
+        countDown('Oct 25 2019 08:00:00 GMT-0500', 'd','h','m','s', '<h2>¡ HOY !</h2>')
+
+    }
+
 }

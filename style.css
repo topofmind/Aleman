@@ -247,7 +247,7 @@ nav.navMenu .widgettitle{
 .contBanner{
     position: relative;
     width: 100%;
-    max-height:579px;
+    max-height:660px;
     overflow: hidden;
 }
 .contSlider.active{
@@ -273,6 +273,9 @@ nav.navMenu .widgettitle{
 .contBanner .imgBanner{
     width: 100%;
     display: block;
+}
+.contSlider.no-anim.active .imgBanner{
+    animation: none;
 }
 .contSlider.active .imgBanner{
     animation: bigImage 40s forwards infinite linear;
@@ -317,11 +320,44 @@ nav.navMenu .widgettitle{
     animation: fadeIn 1s forwards;
     animation-delay: 0.5s;
 }
-
 @keyframes fadeIn{
     0%{transform: translate(0%, 200px);opacity: 0; }
     100%{transform: translate(0%, -30%);opacity: 1; }
     /* 100%{transform: translate(0%, 100px);opacity: 1; } */
+}
+.textBanner.clock{
+  opacity: 1;
+}
+.contSlider.active .textBanner.clock{
+    animation: none;
+    top: 47%;
+}
+.textBanner.clock .contTime{
+    opacity: 0;
+    display: flex;
+    justify-content: space-between;
+
+}
+.contSlider.active .textBanner.clock .contTime{
+    animation: fadeInClock 1s forwards;
+    animation-delay: 1s;
+}
+@keyframes fadeInClock{
+    0%{opacity: 0; }
+    100%{opacity: 1; }
+}
+.textBanner.clock div{
+    color: #0066b1;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.textBanner.clock h2{
+    color: #0066b1;
+    text-shadow: none;
+    margin-bottom: 0px;
+    font-size: 3.5em;
 }
 .textBanner h2{
     color: white;

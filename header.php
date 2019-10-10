@@ -29,21 +29,38 @@
 
     <div class="contBanner" id="contBanner">
         
-        <div class="contSlider active" numslide="0">
+        <div class="contSlider no-anim active" numslide="0">
+            <img src="<?php echo get_stylesheet_directory_uri() ?>/img/banner-contador.jpg" alt="Bienvenido al Colegio Alemán" class="imgBanner">
+            <div class="textBanner clock">
+                <div class="contTime" id='clock'>
+                    <div id="d"></div>
+                    <div id="h"></div>
+                    <div id="m"></div>
+                    <div id="s"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contSlider active" numslide="1">
+            <img src="<?php echo get_stylesheet_directory_uri() ?>/img/banner-7.jpg" alt="Bienvenido al Colegio Alemán" class="imgBanner">
+            <div class="textBanner">
+            </div>
+        </div>
+        <div class="contSlider active" numslide="2">
             <img src="<?php echo get_stylesheet_directory_uri() ?>/img/banner-6.jpg" alt="Bienvenido al Colegio Alemán" class="imgBanner">
             <div class="textBanner">
                 <h2>Formamos ciudadanos para el mundo</h2>
             </div>
         </div>
         
-        <div class="contSlider" numslide="1">
+        <div class="contSlider" numslide="3">
             <img src="<?php echo get_stylesheet_directory_uri() ?>/img/banner-5.jpg" alt="Bienvenido al Colegio Alemán" class="imgBanner">
             <div class="textBanner">
                 <h2> Excelencia académica</h2>
             </div>
         </div>
         
-        <div class="contSlider" numslide="2">
+        <div class="contSlider" numslide="4">
             <img src="<?php echo get_stylesheet_directory_uri() ?>/img/banner-4.jpg" alt="Bienvenido al Colegio Alemán" class="imgBanner">
             <div class="textBanner">
                 <h2>4 idiomas</h2>
@@ -54,6 +71,8 @@
 			<div class="dot active" numslide="0"></div>
 			<div class="dot" numslide="1"></div>
 			<div class="dot" numslide="2"></div>
+			<div class="dot" numslide="3"></div>
+			<div class="dot" numslide="4"></div>
 		</div>
 
     </div>
@@ -93,6 +112,5 @@
 
 };
 ?>
-
-
 </header>
+
