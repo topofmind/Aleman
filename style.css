@@ -270,6 +270,9 @@ nav.navMenu .widgettitle{
     transition: 1s;
     z-index: -1;
 }
+.contSlider.info .banner-responsive{
+    display: none;
+}
 .contBanner .imgBanner{
     width: 100%;
     display: block;
@@ -1573,7 +1576,25 @@ sidebarPage1 h3{
     }
     
 }
+@media only screen and (max-width: 500px){
+    .contSlider.active .textBanner.clock{
+        top: 41%;
+    }
+    .contSlider.info .full-width{
+        display: none;
+    }
+    .contSlider.info .banner-responsive{
+        display: block;
+        width: 100%;
+    }
+}
 @media only screen and (max-width: 600px){
+    .contSlider.info{
+        height: auto;
+    }
+    .contBanner{
+        max-height: none;
+    }
     .textBanner{
         padding: 1em;
         top: 49%;
