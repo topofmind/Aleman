@@ -1580,7 +1580,7 @@ sidebarPage1 h3{
     .contSlider.active .textBanner.clock{
         top: 41%;
     }
-    .contSlider.info .full-width{
+    .contSlider.info .full-width-banner{
         display: none;
     }
     .contSlider.info .banner-responsive{

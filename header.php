@@ -31,7 +31,7 @@
         
         <div class="contSlider no-anim active info" numslide="0">
 
-            <img class="full-width" src="<?php echo get_stylesheet_directory_uri() ?>/img/banner-contador.jpg" alt="Bienvenido al Colegio Alemán" class="imgBanner">
+            <img class="full-width-banner" src="<?php echo get_stylesheet_directory_uri() ?>/img/banner-contador.jpg" alt="Bienvenido al Colegio Alemán" class="imgBanner">
 
             <img  src="<?php echo get_stylesheet_directory_uri() ?>/img/banner-contador-responsive.jpg" alt="Bienvenido al Colegio Alemán" class="imgBanner banner-responsive">
 
@@ -47,10 +47,10 @@
 
         <div class="contSlider info" numslide="1">
 
-            <img class="full-width" src="<?php echo get_stylesheet_directory_uri() ?>/img/banner-7.jpg" alt="Bienvenido al Colegio Alemán" class="imgBanner">
+            <img class="full-width-banner" src="<?php echo get_stylesheet_directory_uri() ?>/img/banner-7.jpg" alt="Bienvenido al Colegio Alemán" class="imgBanner">
 
             <img src="<?php echo get_stylesheet_directory_uri() ?>/img/banner-7-responsive.jpg" alt="Bienvenido al Colegio Alemán" class="imgBanner banner-responsive">
-            
+
             <div class="textBanner">
             </div>
         </div>
