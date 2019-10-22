@@ -28,13 +28,13 @@
     <?php get_template_part('/template_part/nav-absolute') ?>
 
     <div class="contBanner" id="contBanner">
+        
+        <div class="contSlider no-anim active info" numslide="0">
 
-        <div class="contSlider active" numslide="0" style="height:auto">
-            <img src="<?php echo get_stylesheet_directory_uri() ?>/img/prueba-2.jpg" width="100%" alt="">
-        </div>
-        <!--
-        <div class="contSlider no-anim active" numslide="0">
-            <img src="<?php echo get_stylesheet_directory_uri() ?>/img/banner-contador.jpg" alt="Bienvenido al Colegio Alemán" class="imgBanner">
+            <img class="full-width-banner" src="<?php echo get_stylesheet_directory_uri() ?>/img/banner-contador.jpg" alt="Bienvenido al Colegio Alemán" class="imgBanner">
+
+            <img  src="<?php echo get_stylesheet_directory_uri() ?>/img/banner-contador-responsive.jpg" alt="Bienvenido al Colegio Alemán" class="imgBanner banner-responsive">
+
             <div class="textBanner clock">
                 <div class="contTime" id='clock'>
                     <div id="d"></div>
@@ -45,8 +45,12 @@
             </div>
         </div>
 
-        <div class="contSlider " numslide="1">
-            <img src="<?php echo get_stylesheet_directory_uri() ?>/img/banner-7.jpg" alt="Bienvenido al Colegio Alemán" class="imgBanner">
+        <div class="contSlider info" numslide="1">
+
+            <img class="full-width-banner" src="<?php echo get_stylesheet_directory_uri() ?>/img/banner-7.jpg" alt="Bienvenido al Colegio Alemán" class="imgBanner">
+
+            <img src="<?php echo get_stylesheet_directory_uri() ?>/img/banner-7-responsive.jpg" alt="Bienvenido al Colegio Alemán" class="imgBanner banner-responsive">
+
             <div class="textBanner">
             </div>
         </div>

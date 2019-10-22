@@ -23,6 +23,9 @@
 
     add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
 
+    define('WP_CACHE', false); //Added by WP-Cache Manager  
+    define('DISABLE_CACHE', true);
+
 
     //active al menu actual
     function special_nav_class ($classes, $item) {
@@ -789,3 +792,82 @@ function redirect_shortcode($atts, $content = null, $code){
 add_shortcode('redirect',  'redirect_shortcode');
 
 
+function news_biblioteca_shortcode($atts, $content = null, $code){
+
+  $content = apply_filters('the_content', $content);
+
+  return '<div class="inicio-noticia">
+  <div class="medium">
+        <h2 class="title-noticia biblioteca">NOVEDADES NOVEDOSAS</h2>   
+        <div class="cont-box-noticia">
+            
+          '.do_shortcode($content).'
+        </div>
+    </div>
+  </div>';
+
+}
+add_shortcode('news_biblioteca',  'news_biblioteca_shortcode');
+
+
+function news_biblioteca_content_shortcode($atts, $content = null, $code){
+
+  extract(shortcode_atts(array(
+    'src' => '',
+    'title' => '',
+  ), $atts));
+
+  return '<div class="box-noticia biblio">
+          <a>
+            <div class="box-noticia-img">
+              <img src='.$src.'>
+            </div>
+            <h3 class="title-box-noticia">
+              '.$title.'
+            </h3>
+          </a>
+        </div>';
+}
+add_shortcode('news_biblioteca_content',  'news_biblioteca_content_shortcode');
+
+
+function content_social_icons_shortcode($atts, $content = null, $code){
+  
+  $content = apply_filters('the_content', $content);
+
+  return '<div class="biblio-social">
+          '.do_shortcode($content).'
+        </div>';
+}
+add_shortcode('content_social_icons',  'content_social_icons_shortcode');
+
+
+function procesoOH_shortcode($atts, $content = null, $code){
+
+  $content = apply_filters('the_content', $content);
+
+  extract(shortcode_atts(array(
+    'title' => '',
+    'color' => '',
+  ), $atts));
+
+  return '<div class="box-proceso">
+            <h4 class="'.$color.'">
+              '.$title.'
+            </h4>
+            <p>
+            '.do_shortcode($content).'
+            </p>
+          </div>';
+}
+add_shortcode('procesoOH',  'procesoOH_shortcode');
+
+function procesoOH_title_shortcode($atts, $content = null, $code){
+
+  $content = apply_filters('the_content', $content);
+
+  return '<h4 class="title_OH">
+            '.do_shortcode($content).'
+            </h4>';
+}
+add_shortcode('procesoOH_title',  'procesoOH_title_shortcode');
