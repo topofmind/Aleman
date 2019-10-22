@@ -691,6 +691,9 @@ align-items: center;
     animation-delay: 0.3s;
     opacity: 0; 
 }
+.box-proceso,.title_OH{
+    display: none;
+}
 @keyframes fadeInNormal{
     0%{transform: translateY(40px);opacity:0}
     100%{transform: translateY(0px);opacity:1}
@@ -1644,4 +1647,89 @@ sidebarPage1 h3{
     .redes-sociales a{
         font-size: 4em;
     }
+    /*admisiones*/
+    .img-OH{
+        display: none;
+    }
+
+    .title_OH{
+        font-size: 1.8em;
+        color: #006ab8; 
+        text-align: center;
+        padding: 0.5em 0;
+        border-left:solid 2px ;
+        border-top: solid 2px;
+        border-right: solid 2px;
+        margin-left: 0;
+        border-top-left-radius: 0.4em;
+        border-top-right-radius: 0.4em;
+        font-weight: bold;
+        display: block;
+    }
+
+    .title_OH span{
+        display: block;
+        font-size: 0.5em;
+    }
+   .box-proceso{
+        box-sizing: border-box;
+        padding: 1em;
+        display: block;
+   }
+
+   .box-proceso h4{
+        color: white;
+        background: rgba(0, 0, 0, 0.5);
+        position: relative;
+        margin-left: 0;
+        padding: 0.5em 0.5em 0.5em 1em;
+        width: 95%;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+        justify-content: center;
+        text-align: center;
+   }
+   .box-proceso h4.black{background: black;}
+   .box-proceso h4.red{background: #fd010b ;}
+   .box-proceso h4.blue{background: #023f98;}
+   .box-proceso h4.yellow{background: #ffde01;color: black;;}
+
+   .box-proceso h4::after, .box-proceso h4::before{
+       position: absolute;
+       content: '';
+       width: 0; 
+        height: 0; 
+        border-left:35px solid;
+        border-top: 35px solid transparent;
+        border-bottom: 35px solid transparent; 
+        right: -22px;
+        top: 50%;
+        transform: translateY(-50%);
+   }
+   .box-proceso h4::before{
+    border-left: 22px solid white;
+    right: auto;
+    left: -1px;
+   }
+   .box-proceso h4.black::after{
+    border-left: 22px solid black;
+   }
+   .box-proceso h4.red::after{
+    border-left: 22px solid #fd010b;
+   }
+   .box-proceso h4.yellow::after{
+    border-left: 22px solid #ffde01;
+   }
+   .box-proceso h4.blue::after{
+    border-left: 22px solid #023f98;
+   }
+
+   .box-proceso p{
+        background: rgba(0,0,0,0.05);
+        padding: 0.4em;
+        width: 93%;
+        box-sizing: border-box;
+   }
 }

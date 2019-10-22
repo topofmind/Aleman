@@ -841,3 +841,33 @@ function content_social_icons_shortcode($atts, $content = null, $code){
 }
 add_shortcode('content_social_icons',  'content_social_icons_shortcode');
 
+
+function procesoOH_shortcode($atts, $content = null, $code){
+
+  $content = apply_filters('the_content', $content);
+
+  extract(shortcode_atts(array(
+    'title' => '',
+    'color' => '',
+  ), $atts));
+
+  return '<div class="box-proceso">
+            <h4 class="'.$color.'">
+              '.$title.'
+            </h4>
+            <p>
+            '.do_shortcode($content).'
+            </p>
+          </div>';
+}
+add_shortcode('procesoOH',  'procesoOH_shortcode');
+
+function procesoOH_title_shortcode($atts, $content = null, $code){
+
+  $content = apply_filters('the_content', $content);
+
+  return '<h4 class="title_OH">
+            '.do_shortcode($content).'
+            </h4>';
+}
+add_shortcode('procesoOH_title',  'procesoOH_title_shortcode');
