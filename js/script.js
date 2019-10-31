@@ -149,14 +149,20 @@ window.onload = function() {
     //activacion de sub menu desplegable para los submenus de submenus1
     if(this.document.querySelector(".contentItems")){
         
-        const Submenu = document.querySelector(".page-item-submenu1.subSubmenus a");
-        const contentItems = document.querySelector(".contentItems");
+        const Submenus = document.querySelectorAll(".page-item-submenu1.subSubmenus a");
+        //const contentItems = document.querySelectorall(".contentItems");
 
-        Submenu.onclick = ()=>{
+        Submenus.forEach(function(Submenu){
 
-            Submenu.classList.toggle('active');
-            contentItems.classList.toggle('open');
-        }
+            Submenu.onclick = ()=>{
+    
+                Submenu.classList.toggle('active');
+                // Submenu.querySelector(".contentItems").classList.toggle('open');
+                Submenu.nextElementSibling.classList.toggle('open')
+               
+            }
+        })
+
 
     }
 
