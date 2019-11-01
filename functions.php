@@ -890,3 +890,45 @@ function convenios_shortcode($atts, $content = null, $code){
             </div>';
 }
 add_shortcode('convenios',  'convenios_shortcode');
+
+function content_form_shortcode($atts, $content = null, $code){
+
+  extract(shortcode_atts(array(
+    'class' => '',
+  ), $atts));
+
+  $content = apply_filters('the_content', $content);
+
+  return '<form id="form" action="validate/envioform.php" class="form '.$class.'">
+            '.do_shortcode($content).'
+          </form>';
+}
+add_shortcode('content_form',  'content_form_shortcode');
+
+
+function content_input_shortcode($atts, $content = null, $code){
+
+  extract(shortcode_atts(array(
+    'class' => '',
+  ), $atts));
+
+  $content = apply_filters('the_content', $content);
+
+  return '<div class="content-input '.$class.'">
+            '.do_shortcode($content).'
+          </div>';
+}
+add_shortcode('content_input',  'content_input_shortcode');
+
+
+function input_text_shortcode($atts, $content = null, $code){
+
+  extract(shortcode_atts(array(
+    'class' => '',
+    'name' => '',
+    'placeholder' => '',
+  ), $atts));
+
+  return '<input class="text '.$class.'" name="'.$name.'"  placeholder="'.$placeholder.'" required>';
+}
+add_shortcode('input_text',  'input_text_shortcode');

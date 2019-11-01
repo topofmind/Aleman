@@ -1450,6 +1450,31 @@ sidebarPage1 h3{
     margin-left: 0;
 }
 
+/*------------ FORMULARIO -------------*/
+/*------------ FORMULARIO -------------*/
+form.form{
+    width: 100%;
+    max-width: 650px;
+    padding: 2em 1em;
+    border-top: 16px solid #211915;
+    border-right: 2px solid #211915;
+    border-left: 2px solid #211915;
+    border-bottom: 2px solid #211915;
+    border-radius: 0.5em;
+    margin: 0 auto;
+}
+
+.content-input{
+    padding: 0.5em;
+    display: flex;
+    justify-content: space-between;
+}
+input.text{
+    padding: 0.3em;
+    max-width: 290px;
+    width: 100%;
+}
+
 /*---------- MEDIA QUERIES -------------*/
 /*---------- MEDIA QUERIES -------------*/
 
