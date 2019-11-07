@@ -1469,6 +1469,9 @@ form.form{
     display: flex;
     justify-content: space-between;
 }
+.content-input.left{
+    justify-content: flex-start;
+}
 input.text{
     padding: 0.3em;
     max-width: 290px;
@@ -1486,6 +1489,34 @@ input.text{
     cursor: pointer;
     color:white;
     background: #bf0811;
+}
+.content-input #info{
+    font-size: 14px;
+    padding-left: 10px;
+    align-self: center;
+}
+.btn-form{
+    border: solid 1px;
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 0.5em 0.5em;
+    font-size: 1.3em;
+    border-radius: 0.3em;
+    transition: 0.3s;
+    color: white;
+    background:#0066b1;
+    cursor: pointer;
+}
+.btn-form:hover{
+    background: #199EFC;
+}
+
+.form p{
+    text-align: center;
+    font-size: 12px;
+    margin: 10px auto;
+    max-width: 550px;
 }
 
 /*---------- MEDIA QUERIES -------------*/

@@ -899,7 +899,7 @@ function content_form_shortcode($atts, $content = null, $code){
 
   $content = apply_filters('the_content', $content);
 
-  return '<form id="form" action="validate/envioform.php" class="form '.$class.'">
+  return '<form id="form" method="post" action="http://localhost/wordpress/index.php/validate/" class="form '.$class.'" enctype="multipart/form-data">
             '.do_shortcode($content).'
           </form>';
 }
@@ -937,10 +937,18 @@ function input_file_shortcode($atts, $content = null, $code){
 
 
   return '<label for="file-upload" class="subir">
-  <i class="fas fa-cloud-upload-alt"></i> Subir archivo
+  <i class="fas fa-cloud-upload-alt"></i> Subir Hoja de Vida
 </label>
-<input id="file-upload" type="file" name="file" style="display: none;"/>
+<input id="file-upload" type="file" name="file" style="display: none;" required/>
 <div id="info"></div>';
 }
 
 add_shortcode('input_file',  'input_file_shortcode');
+
+function input_btn_shortcode($atts, $content = null, $code){
+
+
+  return '<button class="btn-form" type="submit" >Enviar</button>';
+}
+
+add_shortcode('input_btn',  'input_btn_shortcode');
