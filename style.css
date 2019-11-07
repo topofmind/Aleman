@@ -1405,7 +1405,41 @@ sidebarPage1 h3{
     font-size: 1.8em;
     margin: 0 3px;
 }
+/*---------- CONVENIOS PAGE -------------*/
+.convenios-container.full-width-convenios{
+    max-width: 800px;
+    width: 100%;
+}
 
+.convenios-container h2{
+    color: #0066b1;
+    margin-bottom: 10px;
+}
+
+.convenios-container h3{
+    margin: 20px auto 7px auto;
+    color: #0066b1;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.convenios-container .card-blue{
+    max-width: 300px;
+    margin-left:10px ;
+}
+.convenios-container .card-blue h3{
+    color: white;
+}
+
+.convenios-container .col-4 p{
+    padding: 0 0.6em;
+    font-size: 14px;
+}
+.convenios-container .col-4 p i{
+    font-size: 16px;
+}
+
+.convenios-container h4{
+    margin-left: 0;
+}
 
 /*---------- MEDIA QUERIES -------------*/
 /*---------- MEDIA QUERIES -------------*/

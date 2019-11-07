@@ -14,7 +14,7 @@
         
         //wp_enqueue_script('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', array('jquery'), '4.3.1', true);
 
-        wp_enqueue_style('fontawesome', 'https://use.fontawesome.com/releases/v5.8.2/css/all.css?version=1.1');
+        wp_enqueue_style('fontawesome', 'https://use.fontawesome.com/releases/v5.8.2/css/all.css?version=1.4');
     }
 
     add_action('wp_enqueue_scripts', 'aleman_styles');
@@ -353,12 +353,13 @@ function submenu1_items_shortcode($atts, $content = null){
     'text_link' => '',
     'active' => '',
     'class' => '',
-    'target' => ''
+    'target' => '',
+    'subrayar' => '',
 ), $atts));
 
   return "<div class='page-item-submenu1 items ".$active." ".$class."'>
             <a href='".$url."' target='".$target."'><i class='fas fa-level-up-alt'></i>
-            ".$text_link."</a>     
+            ".$text_link." <span class='subrayar'>".$subrayar."</span></a>     
           </div>";
 }
 add_shortcode('submenu1_items','submenu1_items_shortcode');
@@ -513,12 +514,13 @@ function otros_links_shortdoce($atts, $content = null){
 
   extract(shortcode_atts( array(
     'url' => '',
-    'icon' => 'far fa-arrow-alt-circle-down'
+    'icon' => 'far fa-arrow-alt-circle-down',
+    'target' => ''
   ), $atts));
 
 
   $contLink = "<div class='link-otros'>";
-  $contLink .="<a href='".$url."'>";
+  $contLink .="<a href='".$url."' target='".$target."'>";
   $contLink .="<i class='".$icon."'></i>";
   $contLink .=' '.$content;
   $contLink .="</a>";
@@ -871,3 +873,20 @@ function procesoOH_title_shortcode($atts, $content = null, $code){
             </h4>';
 }
 add_shortcode('procesoOH_title',  'procesoOH_title_shortcode');
+
+
+function convenios_shortcode($atts, $content = null, $code){
+
+  extract(shortcode_atts(array(
+    'title' => '',
+    'color' => '',
+    'class' => '',
+  ), $atts));
+
+  $content = apply_filters('the_content', $content);
+
+  return '<div class="convenios-container '.$class.'">
+            '.do_shortcode($content).'
+            </div>';
+}
+add_shortcode('convenios',  'convenios_shortcode');

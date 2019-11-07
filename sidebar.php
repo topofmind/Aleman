@@ -5,7 +5,7 @@
     <?php 
 
     global $post;
-    $args = array( 'posts_per_page' => 5, 'offset'=> 0);
+    $args = array( 'posts_per_page' => 9, 'offset'=> 0);
 
     $myposts = get_posts( $args );
     ?>
