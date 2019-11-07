@@ -2,9 +2,9 @@
 
     function aleman_styles(){
         
-        wp_enqueue_style('style', get_stylesheet_uri());
+        wp_enqueue_style('style', get_stylesheet_uri().'?version=1.1');
 
-        wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', true);
+        wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js?version=1.1', true);
 
         //wp_enqueue_style('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
         
@@ -596,7 +596,7 @@ function shortcode_recientes($atts, $content = null, $code) {
   $cat = $cats[0];
   $cat_name = $cat->name;
 
-  $salida .= '<p>'.$cat_name.'</p>';
+  // $salida .= '<p>'.$cat_name.'</p>';
                     
   if($cat_name == 'Sin categoría'){
     $salida .= '<a href="'.get_permalink().'">';
@@ -890,3 +890,57 @@ function convenios_shortcode($atts, $content = null, $code){
             </div>';
 }
 add_shortcode('convenios',  'convenios_shortcode');
+
+function content_form_shortcode($atts, $content = null, $code){
+
+  extract(shortcode_atts(array(
+    'class' => '',
+  ), $atts));
+
+  $content = apply_filters('the_content', $content);
+
+  return '<form id="form" action="validate/envioform.php" class="form '.$class.'">
+            '.do_shortcode($content).'
+          </form>';
+}
+add_shortcode('content_form',  'content_form_shortcode');
+
+
+function content_input_shortcode($atts, $content = null, $code){
+
+  extract(shortcode_atts(array(
+    'class' => '',
+  ), $atts));
+
+  $content = apply_filters('the_content', $content);
+
+  return '<div class="content-input '.$class.'">
+            '.do_shortcode($content).'
+          </div>';
+}
+add_shortcode('content_input',  'content_input_shortcode');
+
+
+function input_text_shortcode($atts, $content = null, $code){
+
+  extract(shortcode_atts(array(
+    'class' => '',
+    'name' => '',
+    'placeholder' => '',
+  ), $atts));
+
+  return '<input class="text '.$class.'" name="'.$name.'"  placeholder="'.$placeholder.'" required>';
+}
+add_shortcode('input_text',  'input_text_shortcode');
+
+function input_file_shortcode($atts, $content = null, $code){
+
+
+  return '<label for="file-upload" class="subir">
+  <i class="fas fa-cloud-upload-alt"></i> Subir archivo
+</label>
+<input id="file-upload" type="file" name="file" style="display: none;"/>
+<div id="info"></div>';
+}
+
+add_shortcode('input_file',  'input_file_shortcode');

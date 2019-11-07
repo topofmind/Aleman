@@ -44,6 +44,9 @@
                      <a href="https://www.flickr.com/photos/147011084@N02/" target="_blank">
                         <i class="fab fa-flickr"></i>
                     </a>
+                     <a href="https://issuu.com/colegioalemancali" target="_blank">
+                        <img src="http://www.dscali.edu.co/wordpress/wp-content/uploads/2019/10/issuu-icon.png" width="32px" alt="issuu">
+                    </a>
     
                     <?php if(is_page( array('proceso-de-admisiones','por-que-el-aleman','requisitos', 'inscripcion-open-house') )){ ?>
 

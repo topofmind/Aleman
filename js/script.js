@@ -149,14 +149,20 @@ window.onload = function() {
     //activacion de sub menu desplegable para los submenus de submenus1
     if(this.document.querySelector(".contentItems")){
         
-        const Submenu = document.querySelector(".page-item-submenu1.subSubmenus a");
-        const contentItems = document.querySelector(".contentItems");
+        const Submenus = document.querySelectorAll(".page-item-submenu1.subSubmenus a");
+        //const contentItems = document.querySelectorall(".contentItems");
 
-        Submenu.onclick = ()=>{
+        Submenus.forEach(function(Submenu){
 
-            Submenu.classList.toggle('active');
-            contentItems.classList.toggle('open');
-        }
+            Submenu.onclick = ()=>{
+    
+                Submenu.classList.toggle('active');
+                // Submenu.querySelector(".contentItems").classList.toggle('open');
+                Submenu.nextElementSibling.classList.toggle('open')
+               
+            }
+        })
+
 
     }
 
@@ -240,6 +246,24 @@ window.onload = function() {
 
         countDown('Nov 08 2019 08:00:00 GMT-0500', 'd','h','m','s', '<h2>¡ HOY !</h2>')
 
+    }
+
+    if(document.getElementById('file-upload')){
+        
+        let imageUpload = document.getElementById("file-upload");
+        let uploadMsg = document.getElementById("info");
+        // display file name if file has been selected
+        imageUpload.onchange = function() {
+        let input = this.files[0];
+        let text;
+        if (input) {
+            //process input
+            text = imageUpload.value.substr(12);
+        } else {
+            text = "Please select a file";
+        }
+        uploadMsg.innerHTML = text;
+        };
     }
 
 }
