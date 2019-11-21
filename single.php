@@ -9,13 +9,31 @@
                 while(have_posts()): the_post();
 
                 $destacado = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
+
+          
             ?>
 
                 <div class="cont-post-page">
 
+                
+
                     <div class="contImageDest">
-                        <img src="<?php echo $destacado[0] ?> " alt="">
+
+                        <?php
+                        
+                        $post_tags = get_the_tags();
+                        if ( $post_tags[0]->name == 'video' ) {
+                            echo ''; 
+                        }else{
+                        ?>
+
+                            <img src="<?php echo $destacado[0] ?> " alt="">
+
+                        <?php } ?>
+
                         <?php the_content(); ?>
+                    
+                    
                     </div>
 
                 </div>

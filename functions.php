@@ -2,9 +2,9 @@
 
     function aleman_styles(){
         
-        wp_enqueue_style('style', get_stylesheet_uri().'?version=1.1');
+        wp_enqueue_style('style', get_stylesheet_uri().'?version=1.2');
 
-        wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js?version=1.1', true);
+        wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js?version=1.2', true);
 
         //wp_enqueue_style('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
         
@@ -14,7 +14,7 @@
         
         //wp_enqueue_script('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', array('jquery'), '4.3.1', true);
 
-        wp_enqueue_style('fontawesome', 'https://use.fontawesome.com/releases/v5.8.2/css/all.css?version=1.4');
+        wp_enqueue_style('fontawesome', 'https://use.fontawesome.com/releases/v5.8.2/css/all.css?version=1.5');
     }
 
     add_action('wp_enqueue_scripts', 'aleman_styles');
@@ -952,3 +952,49 @@ function input_btn_shortcode($atts, $content = null, $code){
 }
 
 add_shortcode('input_btn',  'input_btn_shortcode');
+
+function video_iframe_shortcode($atts, $content = null, $code){
+
+  extract(shortcode_atts(array(
+    'class' => '',
+    'src' => '',
+  ), $atts));
+
+  return '<div class="videoIframe '.$class.'">
+            <iframe src="'.$src.'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>';
+}
+add_shortcode('video_iframe',  'video_iframe_shortcode');
+
+//[video_iframe src="https://www.youtube.com/embed/eA0dozN3SI4"]
+
+function video_shortcode($atts, $content = null, $code){
+
+  extract(shortcode_atts(array(
+    'class' => '',
+    'src' => '',
+  ), $atts));
+
+  return '<video id="videoPost" class="'.$class.'" controls>
+            <source src="'.$src.'" type="video/mp4">
+          </video>';
+}
+add_shortcode('video',  'video_shortcode');
+
+function image_text_shortcode($atts, $content = null, $code){
+
+  extract(shortcode_atts(array(
+    'class' => '',
+    'src' => '',
+    'text' => '',
+    'href' => '',
+  ), $atts));
+
+  return '<div class="text-image-as '.$class.'" >
+          <a href="'.$href.'"  target="_blank">
+            <img src="'.$src.'" >
+            <h3>'.$text.'</h3>
+          </a>
+          </div>';
+}
+add_shortcode('image_text',  'image_text_shortcode');

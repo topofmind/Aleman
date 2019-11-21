@@ -82,7 +82,7 @@
 			<div class="dot" numslide="3"></div>
 			<div class="dot" numslide="4"></div>
 		</div>
--->
+
     </div>
 
 <?php }else{  ?>
