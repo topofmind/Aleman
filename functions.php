@@ -2,7 +2,7 @@
 
     function aleman_styles(){
         
-        wp_enqueue_style('style', get_stylesheet_uri().'?version=1.2');
+        wp_enqueue_style('style', get_stylesheet_uri().'?version=1.3');
 
         wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js?version=1.2', true);
 
