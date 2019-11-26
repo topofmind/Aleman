@@ -1128,7 +1128,8 @@ sidebarPage1 h3{
     margin-bottom: 25px;
 }
 .container.single{
-    width: 1280px;
+    width: 100%;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 1em;
 }
@@ -1169,6 +1170,10 @@ sidebarPage1 h3{
     text-align: left;
     margin: 5px auto 15px auto;
     border-bottom: 1px solid;
+}
+.cont-post-page{
+    width: 100%;
+    max-width: 900px;
 }
 .cont-post-page p{
     padding: 0.3em;
@@ -1519,6 +1524,55 @@ input.text{
     max-width: 550px;
 }
 
+/*----------- VIDEO - VIDEOS IFRAMES ---------*/
+.videoIframe{
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    width: 100%;
+}
+.videoIframe iframe{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+video#videoPost{
+    width: 100%;
+    
+}
+
+.text-image-as{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.8em;
+    max-width: 260px;
+    margin: 0 auto;
+    border-bottom: 3px solid white;
+    transition: 0.3s;
+
+}
+
+.text-image-as:hover{
+    border-bottom: 3px solid #0066b1;
+}
+
+.text-image-as:hover h3{
+    color: #0066b1;
+}
+.text-image-as img{
+    display: block;
+    width: 100%;
+}
+.text-image-as h3{
+    text-align: center;
+    transition: 0.3s;
+    color:black;
+    border:none;
+    margin: 0 auto 7px auto;
+}
+
+
 /*---------- MEDIA QUERIES -------------*/
 /*---------- MEDIA QUERIES -------------*/
 
@@ -1723,6 +1777,10 @@ input.text{
     }
 }
 @media only screen and (max-width: 600px){
+    .titleHome.single{
+        text-align: center;
+        font-size: 1.9em;
+    }
     .contSlider.info{
         height: auto;
     }
