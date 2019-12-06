@@ -4,7 +4,7 @@
         
         wp_enqueue_style('style', get_stylesheet_uri().'?version=1.3');
 
-        wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js?version=1.3', true);
+        wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js?version=1.6', true);
 
         //wp_enqueue_style('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
         
@@ -133,9 +133,14 @@ function page1_template_shortcode($atts, $content = null){
 add_shortcode('page1_template','page1_template_shortcode');
 
 function pageSidebar1_template_shortcode($atts, $content = null){
+
+  extract(shortcode_atts(array(
+    'class' => ''
+  ) , $atts));
+
   $content = apply_filters('the_content', $content);
 
-  return "<div class=' sidebarP sidebarPage1'> 
+  return "<div class=' sidebarP sidebarPage1 ".$class."'> 
           ".do_shortcode($content).
           "</div>";
 }
@@ -245,8 +250,12 @@ add_shortcode('flex','flex_shortcode');
 
 function page_full_width_shortcode($atts, $content = null){
 
+  extract(shortcode_atts(array(
+    'class' => '',
+  ), $atts));
+
   $content = apply_filters('the_content', $content);
-  return "<div class='page-full-width'> ".do_shortcode($content)."</div>";
+  return "<div class='page-full-width ".$class."'> ".do_shortcode($content)."</div>";
     
 }
 add_shortcode('page_full_width','page_full_width_shortcode');

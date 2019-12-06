@@ -244,7 +244,7 @@ window.onload = function() {
             }, 1000);
         }
 
-        countDown('Dec 06 2019 08:00:00 GMT-0500', 'd','h','m','s', '<h2>¡ HOY !</h2>')
+        countDown('Jan 17 2020 08:00:00 GMT-0500', 'd','h','m','s', '<h2>¡ HOY !</h2>')
 
     }
 

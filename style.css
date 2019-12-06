@@ -792,6 +792,9 @@ align-items: center;
     max-width: 290px;
     margin-top: 70px;
 }
+.sidebarPage1.min{
+    padding-left: 2em;
+}
 sidebarPage1 h3{
     display: none;
 }
@@ -1071,6 +1074,9 @@ sidebarPage1 h3{
 
 .page-full-width{
     max-width: 800px;
+}
+.page-full-width.extend{
+    max-width: 900px;
 }
 .image-vertical{
     padding-left: 15px;
