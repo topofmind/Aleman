@@ -110,8 +110,13 @@ function comunidad_shortcode($atts, $content = null){
 add_shortcode('comunidad','comunidad_shortcode');
 
 function comunidad_img_shortcode($atts, $content = null){
+
+  extract(shortcode_atts(array(
+    'class' => ''
+) , $atts));
+
   $content = apply_filters('the_content', $content);
-  return "<div class='cont-comunidad'> ".do_shortcode($content)."</div>";
+  return "<div class='cont-comunidad ".$class."'> ".do_shortcode($content)."</div>";
 }
 
 add_shortcode('comunidad_img','comunidad_img_shortcode');

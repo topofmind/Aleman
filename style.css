@@ -563,6 +563,9 @@ align-items: center;
     flex-wrap: wrap;
     padding: 1em 0em;
 }
+.cont-comunidad.izq{
+    justify-content: flex-start;
+}
 .cont-comunidad img{
     max-width: 130px;
     width: 100%;
