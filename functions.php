@@ -979,6 +979,7 @@ function video_iframe_shortcode($atts, $content = null, $code){
 }
 add_shortcode('video_iframe',  'video_iframe_shortcode');
 
+//[video_iframe src="https://www.youtube.com/embed/eA0dozN3SI4"]
 
 function video_shortcode($atts, $content = null, $code){
 
@@ -1001,7 +1002,7 @@ function image_text_shortcode($atts, $content = null, $code){
     'text' => '',
     'href' => '',
   ), $atts));
-  
+
   return '<div class="text-image-as '.$class.'" >
           <a href="'.$href.'"  target="_blank">
             <img src="'.$src.'" >
@@ -1010,3 +1011,37 @@ function image_text_shortcode($atts, $content = null, $code){
           </div>';
 }
 add_shortcode('image_text',  'image_text_shortcode');
+
+function layout_grid_shortcode($atts, $content = null, $code){
+
+  extract(shortcode_atts(array(
+    'class' => '',
+  ), $atts));
+
+  $content = apply_filters('the_content', $content);
+
+  return '<div class="layout-grid '.$class.'">
+            '.do_shortcode($content).'
+          </div>';
+}
+add_shortcode('layout_grid',  'layout_grid_shortcode');
+
+function video_grid_shortcode($atts, $content = null, $code){
+
+  extract(shortcode_atts(array(
+    'class' => '',
+    'src' => '',
+    'title' => '',
+    'img' => ''
+  ), $atts));
+
+  $content = apply_filters('the_content', $content);
+
+  return '<div class="grid-video '.$class.'">
+            <h3>'.$title.'</h3>
+            <img src="'.$img.'" link="'.$src.'">
+              '.do_shortcode($content).'
+          </div>';
+}
+add_shortcode('video_grid',  'video_grid_shortcode');
+
