@@ -4,7 +4,7 @@
         
         wp_enqueue_style('style', get_stylesheet_uri().'?version=1.3');
 
-        wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js?version=1.3', true);
+        wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js?version=1.5', true);
 
         //wp_enqueue_style('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
         
