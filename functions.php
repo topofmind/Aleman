@@ -2,9 +2,9 @@
 
     function aleman_styles(){
         
-        wp_enqueue_style('style', get_stylesheet_uri().'?version=1.3');
+        wp_enqueue_style('style', get_stylesheet_uri().'?version=1.4');
 
-        wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js?version=1.5', true);
+        wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js?version=1.6', true);
 
         //wp_enqueue_style('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
         
@@ -110,8 +110,12 @@ function comunidad_shortcode($atts, $content = null){
 add_shortcode('comunidad','comunidad_shortcode');
 
 function comunidad_img_shortcode($atts, $content = null){
+
+  extract(shortcode_atts(array(
+    'class' => ''
+) , $atts));
   $content = apply_filters('the_content', $content);
-  return "<div class='cont-comunidad'> ".do_shortcode($content)."</div>";
+  return "<div class='cont-comunidad ".$class."'> ".do_shortcode($content)."</div>";
 }
 
 add_shortcode('comunidad_img','comunidad_img_shortcode');
@@ -133,9 +137,14 @@ function page1_template_shortcode($atts, $content = null){
 add_shortcode('page1_template','page1_template_shortcode');
 
 function pageSidebar1_template_shortcode($atts, $content = null){
+
+  extract(shortcode_atts(array(
+    'class' => ''
+  ) , $atts));
+
   $content = apply_filters('the_content', $content);
 
-  return "<div class=' sidebarP sidebarPage1'> 
+  return "<div class=' sidebarP sidebarPage1 ".$class."'> 
           ".do_shortcode($content).
           "</div>";
 }
@@ -245,8 +254,12 @@ add_shortcode('flex','flex_shortcode');
 
 function page_full_width_shortcode($atts, $content = null){
 
+  extract(shortcode_atts(array(
+    'class' => '',
+  ), $atts));
+
   $content = apply_filters('the_content', $content);
-  return "<div class='page-full-width'> ".do_shortcode($content)."</div>";
+  return "<div class='page-full-width ".$class."'> ".do_shortcode($content)."</div>";
     
 }
 add_shortcode('page_full_width','page_full_width_shortcode');
@@ -998,3 +1011,35 @@ function image_text_shortcode($atts, $content = null, $code){
           </div>';
 }
 add_shortcode('image_text',  'image_text_shortcode');
+
+function layout_grid_shortcode($atts, $content = null, $code){
+
+  extract(shortcode_atts(array(
+    'class' => '',
+  ), $atts));
+
+  $content = apply_filters('the_content', $content);
+
+  return '<div class="layout-grid '.$class.'">
+            '.do_shortcode($content).'
+          </div>';
+}
+add_shortcode('layout_grid',  'layout_grid_shortcode');
+
+function video_grid_shortcode($atts, $content = null, $code){
+
+  extract(shortcode_atts(array(
+    'class' => '',
+  ), $atts));
+
+  $content = apply_filters('the_content', $content);
+
+  return '<div class="grid-video '.$class.'">
+  <video width="100%" height="240" controls>
+    <source src="movie.mp4" type="video/mp4">
+  </video>
+            '.do_shortcode($content).'
+          </div>';
+}
+add_shortcode('video_grid',  'video_grid_shortcode');
+
