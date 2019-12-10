@@ -2,7 +2,7 @@
 
     function aleman_styles(){
         
-        wp_enqueue_style('style', get_stylesheet_uri().'?version=1.3');
+        wp_enqueue_style('style', get_stylesheet_uri().'?version=1.4');
 
         wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js?version=1.6', true);
 
@@ -114,7 +114,6 @@ function comunidad_img_shortcode($atts, $content = null){
   extract(shortcode_atts(array(
     'class' => ''
 ) , $atts));
-
   $content = apply_filters('the_content', $content);
   return "<div class='cont-comunidad ".$class."'> ".do_shortcode($content)."</div>";
 }
@@ -980,7 +979,6 @@ function video_iframe_shortcode($atts, $content = null, $code){
 }
 add_shortcode('video_iframe',  'video_iframe_shortcode');
 
-//[video_iframe src="https://www.youtube.com/embed/eA0dozN3SI4"]
 
 function video_shortcode($atts, $content = null, $code){
 
@@ -1003,7 +1001,7 @@ function image_text_shortcode($atts, $content = null, $code){
     'text' => '',
     'href' => '',
   ), $atts));
-
+  
   return '<div class="text-image-as '.$class.'" >
           <a href="'.$href.'"  target="_blank">
             <img src="'.$src.'" >
