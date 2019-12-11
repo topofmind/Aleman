@@ -1585,6 +1585,7 @@ video#videoPost{
 .layout-grid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    width: 100%;
 }
 .layout-grid .grid-video:nth-child(1){
     grid-column: 1 / 3;
@@ -1600,21 +1601,128 @@ video#videoPost{
 }
 .grid-video{
     width: 100%;
-
+    position: relative;
+    cursor:pointer
 }
-.grid-video video{
+.grid-video button{
+    position: absolute;
+    display: block;
+    top: 50%;
+    transform: translateY(-10%);
+    opacity: 0;
+    transition: 0.3s;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background: none;
+    outline: none;
+    color: white;
+    font-size: 3.4em;
+    border: none;
+    z-index: 2;
+    cursor: pointer;
+}
+.grid-video:hover > button{
+    transform: translateY(-50%);
+    opacity: 1;
+}
+.grid-video:hover > .bg-grid-video{
+    opacity: 0.8;
+}
+.grid-video:hover > h4{
+    font-size: 1.5em;
+    background: #bf0811;
+    color: white;
+}
+.bg-grid-video{
+    background: rgba(0,0,0,0.2);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(0,0,0,0.2)), color-stop(50%, rgba(0,0,0,0.6)), color-stop(100%, rgba(0,0,0,1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,1) 100%);
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,1) 100%);
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.2;
+    transition: 0.3s;
+}
+.grid-video img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.grid-video h4{
+    background: #f7df00;
+    color: #211915;
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    padding: 0.1em;
+    text-transform: uppercase;
+    z-index: 2;
+    transition: 0.3s;
+}
+.grid-video h4 span{
+    font-family: 'Open Sans';
+    font-size: 0.8em;
+    text-transform: none;
+    font-weight: 500;
+    font-style: italic;
+    display: block;
+    transition: 0.3s;
+}
+
+.bg-video-grid{
+    position: fixed;
+    z-index: -1;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: 0.5s;
+}
+.bg-video-grid.visible{
+    z-index: 5;
+    opacity: 1;
+}
+.cont-video{
+    width: 100%;
+    max-width: 1200px;
+}
+.cont-close{
+padding: 0.3em;
+font-size: 2em;
+color: white;
+text-align: right;
+}
+
+.cont-video video{
     width: 100%;
 }
-
-.grid-video h3{
-    background: white;
-    color: #0066b1;
-
+.cont-close i{
+    cursor: pointer;
 }
 
+/*---------- MEDIA QUERIES -------------*/
+/*---------- MEDIA QUERIES -------------*/
 
-/*---------- MEDIA QUERIES -------------*/
-/*---------- MEDIA QUERIES -------------*/
+@media only screen and (max-width: 1280px){
+    .cont-video{
+        max-width: 1000px;
+    }
+}
 
 @media only screen and (max-width: 992px){
     nav.navMenu{

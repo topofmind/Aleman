@@ -2,9 +2,9 @@
 
     function aleman_styles(){
         
-        wp_enqueue_style('style', get_stylesheet_uri().'?version=1.4');
+        wp_enqueue_style('style', get_stylesheet_uri().'?version=1.5');
 
-        wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js?version=1.6', true);
+        wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js?version=1.7', true);
 
         //wp_enqueue_style('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
         
@@ -1032,16 +1032,42 @@ function video_grid_shortcode($atts, $content = null, $code){
     'class' => '',
     'src' => '',
     'title' => '',
+    'subtitle' => '',
     'img' => ''
   ), $atts));
 
   $content = apply_filters('the_content', $content);
 
   return '<div class="grid-video '.$class.'">
-            <h3>'.$title.'</h3>
+            <h4>'.$title.' <span>'.$subtitle.'</span></h4>
+            <button class="play"><i class="far fa-play-circle"></i></button>
+            <div class="bg-grid-video">
+            </div>
             <img src="'.$img.'" link="'.$src.'">
               '.do_shortcode($content).'
           </div>';
 }
 add_shortcode('video_grid',  'video_grid_shortcode');
+
+function content_video_shortcode($atts, $content = null, $code){
+
+  extract(shortcode_atts(array(
+    'class' => '',
+
+  ), $atts));
+
+  $content = apply_filters('the_content', $content);
+
+  return '<div id="content-video" class="bg-video-grid '.$class.'">
+            <div class="cont-video">
+              <div class="cont-close">
+                <i id="close" class="far fa-times-circle"></i>
+              </div>
+                <video id="video" controls>
+                  <source src="https://www.dscali.edu.co/videosWeb/video-ib-2.mp4" type="video/mp4">
+                </video>
+            </div> 
+          </div>';
+}
+add_shortcode('content_video',  'content_video_shortcode');
 

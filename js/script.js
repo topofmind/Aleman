@@ -266,4 +266,38 @@ window.onload = function() {
         };
     }
 
+    if(document.getElementById('content-video')){
+
+
+        let contBg= document.getElementById('content-video');
+        let close= document.getElementById('close');
+        let video= document.getElementById('video');
+        let contentVideo = document.querySelectorAll('.grid-video');
+        let LinksVideo =  document.querySelectorAll('.grid-video img');
+
+        contentVideo.forEach(element => {
+
+            element.onclick= function(){
+
+                contBg.classList.add('visible');
+
+                console.log(element.childNodes[7].getAttribute("link"));
+                
+                let videoLink = element.childNodes[7].getAttribute("link");
+
+                video.setAttribute("src",videoLink);
+                video.play();
+            }
+
+            
+        
+        });
+
+        close.onclick = ()=>{
+            contBg.classList.remove('visible')
+            video.pause();
+        }
+
+    }
+
 }
