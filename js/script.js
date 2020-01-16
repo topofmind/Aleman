@@ -300,4 +300,44 @@ window.onload = function() {
 
     }
 
+    //scroll vertical esperiencia IB
+    if(document.getElementById('scroll')){
+
+        let scroll = document.getElementById('scroll');
+        let up = document.getElementById('up');
+        let down = document.getElementById('down');
+
+        let imageVideos = document.querySelectorAll('.img-video-expIB')
+
+        let height = (document.querySelector('.img-video-expIB').offsetHeight) + 20;
+        let totalVideos = imageVideos.length;
+        let fullScroll = height * (totalVideos - 2);
+        var upScroll = 0;
+
+        up.onclick = ()=>{
+
+            upScroll += height;
+            console.log(upScroll, totalVideos);
+            
+            if(upScroll >= fullScroll){
+                upScroll = fullScroll
+            }
+
+            scroll.style.transform = "translateY(-"+upScroll+"px)";
+        }
+
+        down.onclick = ()=>{
+
+            upScroll -= height;
+            console.log(upScroll);
+
+            if(upScroll >= (-1 * fullScroll)){
+                upScroll = -1*fullScroll
+            }
+
+            scroll.style.transform = "translateY(-"+upScroll+"px)";
+        }
+        
+    }
+
 }

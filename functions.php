@@ -1071,3 +1071,57 @@ function content_video_shortcode($atts, $content = null, $code){
 }
 add_shortcode('content_video',  'content_video_shortcode');
 
+function container_scroll_shortcode($atts, $content = null, $code){
+
+  $content = apply_filters('the_content', $content);
+
+  return '<div class="container-scroll" id="scroll">
+            '.do_shortcode($content).'
+          </div>';
+}
+add_shortcode('container_scroll',  'container_scroll_shortcode');
+
+function img_video_expIB_shortcode($atts, $content = null, $code){
+
+  extract(shortcode_atts(array(
+    'class' => '',
+    'title' => '',
+    'footpage' => '',
+    'src' => '',
+    
+  ), $atts));
+
+  return '
+            <div class="img-video-expIB '.$class.'"> 
+              <h4>'.$title.'</h4>
+              <div class="cont-image-play">
+                <div class="cont-play">
+                  <button class="play"><i class="far fa-play-circle"></i></button>
+                </div>
+                <img src="'.$src.'" />
+              </div>
+              <p>'.$footpage.'</p>
+            </div>
+          ';
+}
+add_shortcode('img_video_expIB',  'img_video_expIB_shortcode');
+
+function arrow_up_shortcode($atts, $content = null, $code){
+
+  return '<div class="arrow up" id="up">
+              <i class="fas fa-chevron-circle-up"></i>
+            </div>
+            
+           ';
+}
+add_shortcode('arrow_up',  'arrow_up_shortcode');
+
+function arrow_down_shortcode($atts, $content = null, $code){
+  
+  return '
+            <div class="arrow down" id="down">
+              <i class="fas fa-chevron-circle-down"></i>
+            </div>
+           ';
+}
+add_shortcode('arrow_down',  'arrow_down_shortcode');

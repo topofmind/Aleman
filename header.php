@@ -29,30 +29,28 @@
 
     <div class="contBanner" id="contBanner">
 
-        <div class="contSlider active" numslide="0">
-            <a href="https://www.dscali.edu.co/adviento/ES/" target="_blank">
-                <img src="<?php echo get_stylesheet_directory_uri() ?>/img/Banner-adviento-min.jpg" alt="Calendario adviento" class="imgBanner">
-                <div class="textBanner"></div>
-            </a>
-        </div>
+       
         
-        <div class="contSlider no-anim info" numslide="1">
+        <div class="contSlider active no-anim info" numslide="0">
 
-            <img class="full-width-banner" src="<?php echo get_stylesheet_directory_uri() ?>/img/banner-contador.jpg" alt="Bienvenido al Colegio Alemán" class="imgBanner">
+            <a href="http://www.dscali.edu.co/wordpress/admisiones/proceso-de-admisiones/">
+                <img class="full-width-banner" src="<?php echo get_stylesheet_directory_uri() ?>/img/banner-contador.jpg" alt="Bienvenido al Colegio Alemán" class="imgBanner">
 
-            <img  src="<?php echo get_stylesheet_directory_uri() ?>/img/banner-contador-responsive.jpg" alt="Bienvenido al Colegio Alemán" class="imgBanner banner-responsive">
+                <img  src="<?php echo get_stylesheet_directory_uri() ?>/img/banner-contador-responsive.jpg" alt="Bienvenido al Colegio Alemán" class="imgBanner banner-responsive">
 
-            <div class="textBanner clock">
-                <div class="contTime" id='clock'>
-                    <div id="d"></div>
-                    <div id="h"></div>
-                    <div id="m"></div>
-                    <div id="s"></div>
+                <div class="textBanner clock">
+                    <div class="contTime" id='clock'>
+                        <div id="d"></div>
+                        <div id="h"></div>
+                        <div id="m"></div>
+                        <div id="s"></div>
+                    </div>
                 </div>
-            </div>
+            </a>
+
         </div>
 
-        <div class="contSlider info" numslide="2">
+        <div class="contSlider info" numslide="1">
 
             <img class="full-width-banner" src="<?php echo get_stylesheet_directory_uri() ?>/img/banner-7.jpg" alt="Bienvenido al Colegio Alemán" class="imgBanner">
 
@@ -61,21 +59,21 @@
             <div class="textBanner">
             </div>
         </div>
-        <div class="contSlider " numslide="3">
+        <div class="contSlider " numslide="2">
             <img src="<?php echo get_stylesheet_directory_uri() ?>/img/banner-6.jpg" alt="Bienvenido al Colegio Alemán" class="imgBanner">
             <div class="textBanner">
                 <h2>Formamos ciudadanos para el mundo</h2>
             </div>
         </div>
         
-        <div class="contSlider" numslide="4">
+        <div class="contSlider" numslide="3">
             <img src="<?php echo get_stylesheet_directory_uri() ?>/img/banner-5.jpg" alt="Bienvenido al Colegio Alemán" class="imgBanner">
             <div class="textBanner">
                 <h2> Excelencia académica</h2>
             </div>
         </div>
         
-        <div class="contSlider" numslide="5">
+        <div class="contSlider" numslide="4">
             <img src="<?php echo get_stylesheet_directory_uri() ?>/img/banner-4.jpg" alt="Bienvenido al Colegio Alemán" class="imgBanner">
             <div class="textBanner">
                 <h2>4 idiomas</h2>
@@ -88,7 +86,6 @@
 			<div class="dot" numslide="2"></div>
 			<div class="dot" numslide="3"></div>
             <div class="dot" numslide="4"></div>
-            <div class="dot" numslide="5"></div>
 		</div>
 
     </div>

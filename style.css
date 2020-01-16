@@ -1081,6 +1081,12 @@ sidebarPage1 h3{
 .page-full-width.extend{
     max-width: 900px;
 }
+.page-full-width.exp-ib{
+    background: url(http://www.dscali.edu.co/wordpress/wp-content/uploads/2020/01/bg-IB-2B.png);
+    background-size: 100%;
+    background-position: 50% 70%;
+    background-repeat: no-repeat;
+}
 .image-vertical{
     padding-left: 15px;
     max-width: 365px;
@@ -1580,7 +1586,102 @@ video#videoPost{
     border:none;
     margin: 0 auto 7px auto;
 }
+/*----- experiecnia IB ------*/
+.sidebarPage1.exp-IB{
+padding: 3.7em 1em 1em 1em;
+box-shadow: 0.2em 0em 0.3em rgba(0, 0, 0, 0.3);
+position: relative;
+margin-right: 10px;
+max-height: 680px;
+overflow: hidden;
+}
+.sidebarPage1 .arrow{
+    position: absolute;
+    right: 0;
+    left: 0;
+    background: white;
+    text-align: center;
+    padding: 0.1em 0;
+    font-size: 2.5em;
+    z-index: 3;
+}
+.sidebarPage1 .arrow i{
+    cursor: pointer;
+}
+.sidebarPage1 .arrow.up{
+    top: 0px;
+    box-shadow: 0em 0em 0.1em rgba(0,0,0,0.3);
+}
+.sidebarPage1 .arrow.down{
+    bottom: 0px;
+    box-shadow: 0em -0em 0.1em rgba(0,0,0,0.3);
+}
+.container-scroll{
+    transition: 0.3s;
+    transform: translateY(0);
+}
+.img-video-expIB{
+    position: relative;
+    width: 100%;
+    padding: 1em;
+    border: solid 1px rgba(0, 0, 0, 0.07);
+    border-radius: 0.2em;
+    margin: 20px 0;
+    transition: 0.3s;
+}
+.img-video-expIB:hover{
+    border: solid 1px #005896;
+}
+.img-video-expIB:hover > .cont-image-play .cont-play button{
+    font-size: 2.5em;
+}
+.img-video-expIB:hover > h4{
+    transform: translateY(-5px);
 
+}
+.img-video-expIB .cont-image-play{
+    position: relative;
+    width: 100%;
+}
+.img-video-expIB h4{
+    line-height: 20px;
+    text-transform: uppercase;
+    background: #ffde01;
+    margin-left: 0;
+    padding: 0 0.3em;
+    transition: 0.2s;
+    font-size: 17px;
+}
+.img-video-expIB .cont-play{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.img-video-expIB .cont-play button{
+    font-size: 2em;
+    background: none;
+    color: white;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.img-video-expIB img{
+    width: 100%;
+    display: block;
+}
+.img-video-expIB p{
+    font-size: 14px;
+    padding: 0 0.3em;
+    text-align: center;
+}
 /*----------------- GRID LAYOUT ---------------*/
 .layout-grid{
     display: grid;
@@ -1714,6 +1815,8 @@ text-align: right;
 .cont-close i{
     cursor: pointer;
 }
+
+
 
 /*---------- MEDIA QUERIES -------------*/
 /*---------- MEDIA QUERIES -------------*/
